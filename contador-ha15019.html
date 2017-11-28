@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            .textArea{
+
+        }
+        
+            html {
+  background-image: url("http://www.androidguys.com/wp-content/uploads/2016/05/Poly-Lakeside.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+  .boton_1 {
+ border: none;
+ background: #512C25;
+ color: #D38425;
+ padding: 10px;
+ font-size: 18px;
+ border-radius: 5px;
+ position: relative;
+ box-sizing: border-box;
+ transition: all 500ms ease;
+ font-family:  Georgia, Serif;
+}
+  .boton_1:hover{
+    opacity: 0.6;
+    text-decoration: none;
+    background: rgba(0,0,0,0);
+    color: #922828;
+    box-shadow: inset 0 0 0 3px #922828;
+        </style>
+        <title>
+            CONTADOR
+        </title>
+        <script type="text/javascript">
+            var n=5;
+        var codigoC='';
+        var cont='';
+        function setColor(color){
+
+
+            if (color=='verde') {
+                n=5;
+                 codigoC='#00FF00';
+                 cont=setInterval("conteo()",1000);
+            }
+            if (color=='azul') {
+                 n=8;
+                 codigoC='#0000FF';
+                 cont=setInterval("conteo()",1000);
+            }
+            if (color=='rojo') {
+                n=10;
+                codigoC='#FF0000';
+                cont=setInterval("conteo()",1000);
+
+            }
+
+
+        }
+        function conteo()
+        {
+            if(n>0)
+            {
+
+             document.getElementById('contador').value=n;
+
+
+            n--;
+        }else{
+            document.getElementById('contador').value='';
+            document.getElementById('caja').style.background=codigoC;
+            clearInterval(cont);
+
+        }
+
+        }
+        function escribir(num)
+        {
+            alert(num);
+        }
+        </script>
+    </head>
+    <body>
+        <form>
+            <div align="center">
+                <h1 style="color: red;font-family:Courier; ">
+                    CONTEO PARA COLORES
+                </h1>
+                <input id="conteo" name="conteo" type="hidden">
+                    <input class="boton_1" id="verde" name="verde" onclick="setColor('verde')" style="color: green;" type="button" value="Verde">
+                        <input class="boton_1" id="azul" name="azul" onclick="setColor('azul')" style="color: blue;" type="button" value="Azul">
+                            <input class="boton_1" id="rojo" name="rojo" onclick="setColor('rojo')" style="color: red;" type="button" value="Rojo">
+                            </input>
+                        </input>
+                    </input>
+                </input>
+            </div>
+            <center>
+                <br>
+                    <div align="center" id="caja" name="caja" style="height: 150px; width: 150px ">
+                        <input id="contador" name="contador" style="height: 150px; width: 150px; background: inherit; font-size: 80px; text-align: center;color: purple;font-family:Courier; border: 2px outline: none; " type="text">
+                        </input>
+                    </div>
+                </br>
+            </center>
+        </form>
+    </body>
+</html>
